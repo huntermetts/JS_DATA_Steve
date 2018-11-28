@@ -4451,4 +4451,4 @@ for (let i = 0; i < githubData.length; i++){
 
   
 // List all Github users who submitted a pull request that was approved by Steve.
-console.log(githubData.user[i]); 
+console.log(githubData.user); 
