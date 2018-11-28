@@ -4408,6 +4408,8 @@ const githubData = [
     }
   ]
 
+
+// Number of commits:
 let totalCommits = 0;
 
 for (let i = 0; i < githubData.length; i++){
@@ -4416,5 +4418,37 @@ for (let i = 0; i < githubData.length; i++){
        totalCommits += numberOfCommits
     }
    }
-
    console.log(totalCommits);
+
+// Number of Events
+let totalPushEvent = 0;
+let totalPullRequestEvent = 0;
+let totalDeleteEvent = 0;
+let totalIssueCommentEvent = 0;
+let totalCreateEvent = 0;
+
+for (let i = 0; i < githubData.length; i++){
+   if (githubData[i].type === "PushEvent"){
+       totalPushEvent++;
+    } else if (githubData[i].type === "PullRequestEvent"){
+        totalPullRequestEvent++;
+    } else if (githubData[i].type === "DeleteEvent"){
+    totalDeleteEvent++;
+    } else if (githubData[i].type === "IssueCommentEvent"){
+  totalIssueCommentEvent++;
+    } else if (githubData[i].type === "CreateEvent"){
+      totalCreateEvent++;
+    }
+}
+
+
+
+   console.log("Push Events: " + totalPushEvent);
+   console.log("Pull Request Events: " + totalPullRequestEvent)
+   console.log("Delete Event: " + totalDeleteEvent)
+   console.log("Issue Comment Events: " + totalIssueCommentEvent)
+   console.log("Create Events: " + totalCreateEvent)
+
+  
+// List all Github users who submitted a pull request that was approved by Steve.
+console.log(githubData.user[i]); 
