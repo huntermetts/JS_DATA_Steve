@@ -4407,3 +4407,14 @@ const githubData = [
       }
     }
   ]
+
+let totalCommits = 0;
+
+for (let i = 0; i < githubData.length; i++){
+   if ('commits' in githubData[i].payload){
+       const numberOfCommits = githubData[i].payload.commits.length
+       totalCommits += numberOfCommits
+    }
+   }
+
+   console.log(totalCommits);
